@@ -1,20 +1,25 @@
+<script src="../config/index.js"></script>
 <template>
   <div id="app">
     <router-link to="/">
-      <img src="./assets/logo.png">
+      <img src="./assets/simple.jpg" width="100px" height="100px">
     </router-link>
-    <div style="margin-top:10px">
-      <router-link to="/contact-us"  class="button">
-        Contact Us
-      </router-link>
+    <HeaderComp></HeaderComp>
+    <div class="content">
     </div>
-    <router-view/>
-  </div>
+    <FooterComp></FooterComp>
+  </div> 
 </template>
 
 <script>
+import HeaderComp from '@/components/skeletons/HeaderComp.vue'
+const FooterComp = () => import('@/components/skeletons/FooterComp')
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HeaderComp,
+    FooterComp
+  }
 }
 </script>
 
@@ -26,13 +31,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.button{
-  background-color: lightblue;
-  padding: 5px;
-  border-radius:5px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
+  /* background-image: url('./assets/background-for-food-14.jpg'); */
 }
 </style>
